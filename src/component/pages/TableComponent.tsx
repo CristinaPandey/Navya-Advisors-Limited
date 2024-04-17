@@ -1,6 +1,6 @@
 import React from 'react';
 import { Table } from 'antd';
-import { useMarketStatus } from '../api/useData.tsx';
+import { useMarketStatus } from '../../libs/queries.ts';
 
 const TableComponent: React.FC = () => {
     const { isLoading, isError, data } = useMarketStatus();
