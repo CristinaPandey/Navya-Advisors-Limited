@@ -2,6 +2,10 @@ import React from 'react';
 import { Line } from 'react-chartjs-2';
 import { useStockData } from '../api/useData.tsx';
 
+import { CategoryScale, Chart } from "chart.js/auto";
+
+
+Chart.register(CategoryScale);
 const GraphComponent: React.FC = () => {
     const { isLoading, isError, data } = useStockData();
     console.log("graph", data);
