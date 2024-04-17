@@ -1,6 +1,6 @@
 import React from 'react';
-import TableComponent from './component/pages/TableComponent.tsx';
-import GraphComponent from './component/pages/GraphComponent.tsx';
+import TableComponent from './component/TableComponent.tsx';
+import GraphComponent from './component/GraphComponent.tsx';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import Card from 'antd/es/card/Card';
 
