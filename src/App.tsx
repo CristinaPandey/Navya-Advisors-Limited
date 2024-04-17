@@ -1,6 +1,6 @@
 import React from 'react';
 import TableComponent from './component/pages/TableComponent.tsx';
-import GraphComponent from './component/pages/GraphComponent.tsx';
+// import GraphComponent from './component/pages/GraphComponent.tsx';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import Card from 'antd/es/card/Card';
 
@@ -14,9 +14,9 @@ function App() {
         <TableComponent />
       </Card>
       <br />
-      <Card title="Stock Prices (MSFT)" className="mt-20">
-        {/* <GraphComponent /> */}
-      </Card>
+      {/* <Card title="Stock Prices (MSFT)" className="mt-20">
+        <GraphComponent />
+      </Card> */}
 
 
     </QueryClientProvider>

@@ -4,13 +4,14 @@ import { useStockData } from '../api/useData.tsx';
 
 const GraphComponent: React.FC = () => {
     const { isLoading, isError, data } = useStockData();
-    console.log("graph data", data);
+    console.log("graph", data);
 
     if (isLoading) return <div>Loading...</div>;
-    if (isError || !data) return <div>Error fetching data</div>;
+    if (isError || !data || !data.data || !data.data['Weekly Adjusted Time Series']) return <div>Error fetching data</div>;
 
-    const dates = Object.keys(data.data['Weekly Adjusted Time Series']).slice(0, 7);
-    const weeklyData = dates.map(date => data.data['Weekly Adjusted Time Series'][date]);
+    const weeklyTimeSeries = data.data['Weekly Adjusted Time Series'];
+    const dates = Object.keys(weeklyTimeSeries).slice(0, 7);
+    const weeklyData = dates.map(date => weeklyTimeSeries[date]);
     const openPrices = weeklyData.map(item => parseFloat(item['1. open']));
 
     const chartData = {

@@ -9,7 +9,6 @@ const TableComponent: React.FC = () => {
     if (isLoading) return <div>Loading...</div>;
     if (isError) return <div>Error fetching data</div>;
 
-
     const columns = [
         {
             title: 'Market Type',
@@ -47,8 +46,8 @@ const TableComponent: React.FC = () => {
             key: 'notes',
         },
     ];
-    return <Table dataSource={data?.data?.markets} columns={columns} />;
 
+    return <Table dataSource={data?.data?.markets} columns={columns} />;
 };
 
 export default TableComponent;
